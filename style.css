@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,100&display=swap');
+:root {
+    --tamnoSiva: #20333b;
+    --tamnoPlava: #003568;
+    --srednjePlava: #005682;
+    --svetloPlava: #8ee5ff;
+    --svetloSiva: #def2fa;
+    --tamnoCrvena: #ff5a57;
+    --svetloCrvena: #ff9b9a;
+    --bela: #fff;
+    --text: #333;
+    --fontFamily: 'Poppins', sans-serif;
+    --fontSize: 16px;
+    --transition: .4s ease;
+    --padding: 60px 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth
+}
+body {
+    font-family: var(--fontFamily);
+    font-size: var(--fontSize);
+    color: var(--tamnoSiva);
+    font-weight: 300;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    transition: var(--transition);
+}
+.container {
+    max-width: 1140px;
+    margin: auto;
+}
+button {
+    padding: 15px 30px;
+    border: 2px solid var(--bela);
+    background: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-top: 20px;
+    color: var(--bela);
+}
+button:hover {
+    background: var(--bela);
+    color: var(--tamnoSiva);
+    transition: var(--transition);
+}
+h2 {
+    font-size: 3rem;
+    color: var(--tamnoPlava);
+}
+h2::after {
+    display: block;
+    content: "";
+    width: 100px;
+    height: 5px;
+    background: var(--tamnoPlava);
+    margin: 10px 0 30px 0;
+}
+hr {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--srednjePlava),var(--svetloPlava),var(--svetloCrvena), var(--tamnoCrvena));
+    margin: 50px auto;
+    border: none;
+}
+/***************
+nav
+***************/
+nav {
+    background: var(--svetloSiva);
+    padding: 5px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}
+.stickyAdd {
+    box-shadow: 0 2px 10px 5px rgba(0,0,0,.5);
+    transition: .5s all;
+    padding: 0;
+}
+nav .container {
+    display: flex;
+    justify-content: space-between
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    align-items: center;
+}
+nav ul li {
+    margin: 0 30px;
+}
+nav ul li a {
+    font-size: 20px;
+    color: var(--tamnoSiva);
+}
+nav ul li a:hover {
+    color: var(--tamnoCrvena);
+}
+.logo {
+    font-size: 2rem;
+    color: var(--tamnoSiva);
+    font-weight: 700;
+}
+/***************
+header
+***************/
+.mainHeader {
+    padding: 150px 0 200px 0;
+    background: linear-gradient(45deg, var(--tamnoCrvena), var(--svetloPlava));
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+}
+.mainHeader img {
+    width: 100%;
+}
+.mainHeader .container {
+    display: flex;
+    align-items: center;
+}
+.mainHeader article:first-child {
+    flex: 0 0 60%;
+    color: var(--bela);
+}
+.mainHeader p {
+    font-size: 1.2rem;
+    text-shadow: 0 0 2px var(--tamnoSiva);
+}
+.mainHeader article:last-child {
+    flex: 0 0 40%;
+}
+.tipkajuciNaslov {
+    color: var(--bela);
+    text-shadow: 0 0 1px var(--tamnoSiva);
+    font-size: 45px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    position: relative;
+    text-transform: uppercase;
+}
+.tipkajuciNaslov::after {
+    content: "";
+    width: 5px;
+    height: 45px;
+    background: var(--bela);
+    position: absolute;
+    top: 10px;
+    animation: blinkanje 1s 5s infinite;
+}
+@keyframes blinkanje {
+    0% {
+        background: var(--bela);
+    }
+    50% {
+        background: transparent;
+    }
+    100% {
+        background: var(--bela);
+    }
+}
+/***************
+onama
+***************/
+#onama {
+    padding: var(--padding);
+}
+#onama .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#onama img {
+    width: 100%;
+}
+#onama article:first-child {
+    flex: 0 0 58%;
+}
+#onama article:last-child {
+    flex: 0 0 38%;
+}
+/***************
+usluge
+***************/
+#usluge {
+    padding: var(--padding);
+}
+#usluge h2 {
+    text-align: center;
+}
+#usluge h2::after {
+    margin: 10px auto 30px auto;
+}
+#usluge .container {
+    display: flex;
+    justify-content: space-between;
+}
+#usluge article {
+    flex: 0 0 30%;
+    background: var(--svetloSiva);
+    border-radius: 10px;
+}
+#usluge article .text {
+    padding: 30px;
+    text-align: center;
+}
+#usluge article header {
+    background: var(--tamnoPlava);
+    text-align: center;
+    padding: 20px;
+    color: var(--bela);
+    border-radius: 10px 10px 0 0;
+}
+#usluge article header i {
+    font-size: 2rem;
+}
+#usluge h3 {
+    font-size: 1.7rem;
+    padding-bottom: 20px;
+}
+#usluge button {
+    border: 2px solid var(--tamnoPlava);
+    background: transparent;
+    color: var(--tamnoPlava);
+}
+#usluge button:hover {
+    background: var(--tamnoPlava);
+    color: var(--bela);
+}
+/***************
+footer
+***************/
+footer {
+    color: var(--bela);
+    background: var(--tamnoPlava);
+    padding: 180px 0 100px 0;
+    clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+}
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 3;
+}
+footer .container article:first-child {
+    flex: 0 0 55%;
+}
+footer .container article:last-child {
+    flex: 0 0 35%;
+}
+footer h2 {
+    color: var(--bela);
+    text-align: center;
+}
+footer h2::after {
+    margin: 10px auto 30px auto;
+    background: var(--bela);
+}
+footer h2 + p {
+    padding: 0 0 30px 0;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
