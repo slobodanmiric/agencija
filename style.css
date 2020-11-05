@@ -1,16 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap');
 :root {
-    --tamnoSiva: #20333b;
-    --tamnoPlava: #003568;
-    --srednjePlava: #005682;
-    --svetloPlava: #8ee5ff;
-    --svetloSiva: #def2fa;
-    --tamnoCrvena: #ff5a57;
-/*    --svetloCrvena: #ff9b9a;*/
-    --bela: #fff;
-/*    --text: #333;*/
     --fontFamily: 'Poppins', sans-serif;
     --fontSize: 16px;
+    --tamnoPlava: #003568;
+    --svetloPlava: #92e0f9;
+    --tamnoSiva: #20333b;
+    --tamnoCrvena: #ff5a57;
+    --svetloCrvena: #ff9b9a;
+    --svetloSiva: #def2fa;
+    --bela: #fff;
     --transition: .4s ease;
     --padding: 60px 0;
 }
@@ -20,7 +18,7 @@
     box-sizing: border-box;
 }
 html {
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
 }
 body {
     font-family: var(--fontFamily);
@@ -52,6 +50,7 @@ button:hover {
     background: var(--bela);
     color: var(--tamnoSiva);
     transition: var(--transition);
+    box-shadow: 4px 4px 0px var(--tamnoSiva);
 }
 h2 {
     font-size: 3rem;
@@ -65,39 +64,24 @@ h2::after {
     background: var(--tamnoPlava);
     margin: 10px 0 30px 0;
 }
-hr {
-    display: block;
-    content: "";
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(to right, var(--srednjePlava),var(--svetloPlava),var(--svetloCrvena), var(--tamnoCrvena));
-    margin: 50px auto;
-    border: none;
-}
-/***************
+/*****************
 nav
-***************/
+*****************/
 nav {
     background: var(--svetloSiva);
     padding: 5px 0;
     position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
     z-index: 1;
-    width: 100%;
-}
-.stickyAdd {
-    box-shadow: 0 2px 10px 5px rgba(0,0,0,.5);
-    transition: .5s all;
-    padding: 0;
 }
 nav .container {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
 }
 nav ul {
     display: flex;
-    justify-content: center;
     list-style: none;
     align-items: center;
 }
@@ -113,16 +97,33 @@ nav ul li a:hover {
 }
 .logo {
     font-size: 2rem;
-    color: var(--tamnoSiva);
     font-weight: 700;
+    color: var(--tamnoCrvena);
 }
-/***************
+.logo:hover {
+    color: var(--tamnoSiva);
+}
+.stickyAdd {
+    box-shadow: 0 2px 10px 5px rgba(0,0,0,.5);
+    transition: .5s all;
+    padding: 0;
+}
+hr {
+    display: block;
+    content: "";
+    border: none;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--tamnoPlava),var(--svetloPlava),var(--svetloCrvena), var(--tamnoCrvena));
+    margin: 50px 0;
+}
+/*****************
 header
-***************/
+*****************/
 .mainHeader {
     padding: 150px 0 200px 0;
     background: linear-gradient(45deg, var(--tamnoCrvena), var(--svetloPlava));
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
 }
 .mainHeader img {
     width: 100%;
@@ -132,16 +133,16 @@ header
     align-items: center;
     flex-wrap: wrap;
 }
-.mainHeader article:first-child {
+.mainHeader .container article:first-child {
     flex: 0 0 60%;
-    color: var(--bela);
+}
+.mainHeader .container article:last-child {
+    flex: 0 0 40%;
 }
 .mainHeader p {
     font-size: 1.2rem;
-    text-shadow: 0 0 2px var(--tamnoSiva);
-}
-.mainHeader article:last-child {
-    flex: 0 0 40%;
+    color: var(--bela);
+    text-shadow: 2px 2px 0px var(--tamnoSiva);
 }
 .tipkajuciNaslov {
     color: var(--bela);
@@ -172,34 +173,34 @@ header
         background: var(--bela);
     }
 }
-/***************
+/*****************
 onama
-***************/
+*****************/
 #onama {
     padding: var(--padding);
-}
-#onama .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
 }
 #onama img {
     width: 100%;
 }
 #onama article:first-child {
-    flex: 0 0 58%;
+    flex: 0 0 55%
 }
 #onama article:last-child {
-    flex: 0 0 38%;
+    flex: 0 0 35%;
 }
-/***************
+#onama button {
+    border: 2px solid var(--tamnoSiva);
+    color: var(--tamnoSiva);
+}
+/*****************
 usluge
-***************/
+*****************/
 #usluge {
     padding: var(--padding);
-}
-#usluge h2 {
     text-align: center;
 }
 #usluge h2::after {
@@ -217,39 +218,45 @@ usluge
 }
 #usluge article .text {
     padding: 30px;
-    text-align: center;
 }
 #usluge article header {
     background: var(--tamnoPlava);
-    text-align: center;
     padding: 20px;
     color: var(--bela);
     border-radius: 10px 10px 0 0;
 }
 #usluge article header i {
-    font-size: 2rem;
-}
-#usluge h3 {
     font-size: 1.7rem;
-    padding-bottom: 20px;
 }
 #usluge button {
     border: 2px solid var(--tamnoPlava);
-    background: transparent;
     color: var(--tamnoPlava);
 }
-#usluge button:hover {
+#usluge h3 {
+    font-size: 1.7rem;
+    padding: 0 0 20px 0;
+}
+/*****************
+footer
+*****************/
+footer {
     background: var(--tamnoPlava);
+    clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+    padding: 180px 0 100px 0;
     color: var(--bela);
 }
-/***************
-footer
-***************/
-footer {
+footer h2 {
     color: var(--bela);
-    background: var(--tamnoPlava);
-    padding: 180px 0 100px 0;
-    clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+    text-align: center;
+}
+footer h2::after {
+    background: var(--bela);
+    margin: 20px auto 40px auto;
+}
+footer h2 + p {
+    font-size: 1.2rem;
+    padding: 0 0 30px 0;
+    text-align: center;
 }
 footer .container {
     display: flex;
@@ -258,80 +265,66 @@ footer .container {
     line-height: 3;
     flex-wrap: wrap;
 }
-footer .container article:first-child {
+footer article:first-child {
     flex: 0 0 55%;
 }
-footer .container article:last-child {
+footer article:last-child {
     flex: 0 0 35%;
 }
-footer h2 {
-    color: var(--bela);
-    text-align: center;
-}
-footer h2::after {
-    margin: 10px auto 30px auto;
-    background: var(--bela);
-}
-footer h2 + p {
-    padding: 0 0 30px 0;
-    font-size: 1.2rem;
-    text-align: center;
-}
-/***************
-bottombar
-***************/
-.bottombar {
+.bottomBar {
     background: var(--svetloSiva);
+    padding: 15px;
     text-align: center;
-    padding: 20px;
 }
-/***************
-R E S P O N S I V E
-***************/
-@media(max-width:768px) {
+/*****************
+responsive
+*****************/
+@media(max-width: 768px) {
     .container {
         padding: 10px;
     }
     nav {
-        position: static; 
+        position: static;
     }
     nav .container {
         flex-direction: column;
-        flex-wrap: wrap;
     }
     .logo {
         display: block;
         margin: auto;
     }
     nav ul {
-        display: flex;
         justify-content: center;
     }
     nav ul li {
         margin: 0 10px;
     }
-    .tipkajuciNaslov {
-        font-size: 25px;
-    }
-    .mainHeader article:first-child,
-    .mainHeader article:last-child,
+    .mainHeader .container article:first-child,
+    .mainHeader .container article:last-child,
     #onama article:first-child,
     #onama article:last-child,
     #usluge article,
-    footer .container article:first-child,
-    footer .container article:last-child {
+    footer article:first-child,
+    footer article:last-child {
         flex: 0 0 100%;
-        margin-bottom: 30px;
+        margin-bottom: 30px
     }
     .mainHeader {
-        padding: 50px 0 100px 0;
+        clip-path: polygon(0 1%, 100% 1%, 100% 90%, 0% 100%);
+        padding: 50px 0;
     }
     footer {
-        padding: 250px 0 50px 0;
+        clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 100%);
+        padding: 120px 0 50px 0;
+        color: var(--bela);
+    }
+    .tipkajuciNaslov {
+        font-size: 25px;
+    }
+    .tipkajuciNaslov::after {
+        height: 25px;
     }
 }
-
-
 
 
 

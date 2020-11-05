@@ -1,24 +1,23 @@
 $(window).on('scroll', function() {
     var scroll = $(window).scrollTop();
-    if (scroll >= 50) {
+    if(scroll >= 50) {
         $('.sticky').addClass('stickyAdd');
     } else {
         $('.sticky').removeClass('stickyAdd');
     }
 });
 
-/////////////////////
+////////////////////////
 
-const heading = 'Full digitalna usluga';
+const naslov = 'Full digitalna usluga';
 let i = 0;
 
-const typing = () => {
-    if(i < heading.length) {
-        document.querySelector('.tipkajuciNaslov').innerHTML += heading.charAt(i);
+const kuckanje = () => {
+    if(i < naslov.length) {
+        document.querySelector('.tipkajuciNaslov').innerHTML += naslov.charAt(i);
         i++;
-
-        setTimeout(typing, 150);
+        
+        setTimeout(kuckanje, 150);
     }
 }
-
-typing();
+kuckanje();
